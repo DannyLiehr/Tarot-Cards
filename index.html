@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tarot-readings</title>
+    <title>Tarot Readings</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1 class="title">tarot-readings</h1>
+
+<body class="has-background-dark p-4">
+    
+    <div id="information" class="container">
+        <h1 class="title">Tarot Readings</h1>
+        Look up tarot meanings here. Used for my personal readings.
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Search Tarot Cards</h1>
+            <form>
+                <div class="field">
+                    <label class="label" for="card-name">Card Name</label>
+                    <div class="control">
+                        <input class="input" type="text" id="card-name" placeholder="Enter card name" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Card Orientation</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="card-orientation">
+                                <option value="upright">Upright</option>
+                                <option value="reversed">Reversed</option>
+                                <option value="any">Any</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" id="searchCards" type="submit">Add Card</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="error-banner notification is-danger" id="error" style="display:none;">
+        <button class="delete"></button>
+        <strong>Error!</strong> That card can't be found. Check the spelling and try again.
+    </div>
+
+    <hr/>
+    <h2 class="title is-2">Cards</h2>
+    <section class="section grid is-col-min-14" id="card-deck">
+
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
